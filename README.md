@@ -2,13 +2,10 @@
 
 You need to install oracle InstantClient rpms from Oracle WebSite. For
 examle:
-
+```
 -   oracle-instantclient12.2-basic-12.2.0.1.0-1.x86\_64.rpm
-
 -   oracle-instantclient12.2-devel-12.2.0.1.0-1.x86\_64.rpm
-
 -   oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86\_64.rpm
-
 -   yum localinstall -y oracle\*.rpm \--nogpgcheck
 
 These InstantClient package will be installed in the following
