@@ -106,10 +106,9 @@ How to list out all the installed Perl Modules
    @INC
    );
 ```
-```
 How to check if a perl module installed
-   perl -MModule::Name -e1 OR perldoc Module::Name
 ```
+   perl -MModule::Name -e1 OR perldoc Module::Name
 ```
 Add your custom Perl Module path
 ```
