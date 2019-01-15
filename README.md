@@ -34,17 +34,15 @@ Install Perl DBD::Oracle module
 -   Oracle.pm under /usr/local/lib64/perl5/DBD/Oracle.pm
 ```
 To use DBI Oracle module you need to setup environments
-
--   ORACLE\_HOME, LD\_LBRARY\_PATH, TNS\_ADMIN
-
-Test script
-
--   use DBI;
-
--   \$dbh = DBI-\>connect(\"dbi:Oracle:\$dbname\", \$user, \$passwd);
 ```
-# oraperl.sh (single script to install DBD::Oracle Module
-
+   ORACLE\_HOME, LD\_LBRARY\_PATH, TNS\_ADMIN
+```
+Test script
+```use DBI;
+   $dbh = DBI->connect("dbi:Oracle:$dbname", $user, $passwd);
+```
+# oraperl.sh (single script to install DBD::Oracle Module)
+```
 yum localinstall -y oracle\*.rpm \--nogpgcheck
 
 export PATH=/usr/lib/oracle/12.2/client64/bin:$PATH
@@ -66,13 +64,13 @@ make install
 rm -rf $DBDir
 ```
 **Perl for MySQL**
-
+```
 yum install perl-DBD-MySQL or yum install \"perl(DBD::mysql)\"
-
+```
 **Perl for Postgres **
-
+```
 yum install perl-DBD-Pg or yum install \"perl(DBD::Pg)\"
-
+```
 **Perl for MongoDB **
 ```
 Download MongoDB.tar.gz file from metacpan.org and run
@@ -88,9 +86,9 @@ SSL yum install perl-IO-Socket-SSL
 **Other useful perl commands**
 
 How to find \@INC path
-
--   perl -V
-
+```
+perl -V
+```
 How to list out all the installed Perl Modules
 ```
    #!/bin/perl
