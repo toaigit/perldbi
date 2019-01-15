@@ -38,7 +38,8 @@ To use DBI Oracle module you need to setup environments
    ORACLE_HOME, LD_LBRARY_PATH, TNS_ADMIN
 ```
 Test script
-```use DBI;
+```
+   use DBI;
    $dbh = DBI->connect("dbi:Oracle:$dbname", $user, $passwd);
 ```
 # oraperl.sh (single script to install DBD::Oracle Module)
