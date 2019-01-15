@@ -3,10 +3,10 @@
 You need to install oracle InstantClient rpms from Oracle WebSite. For
 examle:
 ```
-   oracle-instantclient12.2-basic-12.2.0.1.0-1.x86\_64.rpm
-   oracle-instantclient12.2-devel-12.2.0.1.0-1.x86\_64.rpm
-   oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86\_64.rpm
-   yum localinstall -y oracle\*.rpm \--nogpgcheck
+   oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+   oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm
+   oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm
+   yum localinstall -y oracle*.rpm --nogpgcheck
 ```
 These InstantClient package will be installed in the following
 directories:
@@ -23,7 +23,9 @@ You need to set Oracle Environment Variables
    export TNS\_ADMIN=/path/to/your/tnsnames-file
 ```
 Install perl-DBI perl-ExtUtils-MakeMaker
-
+```
+   yum install -y perl-DBI perl-ExtUtils-MakeMaker
+```
 Install Perl DBD::Oracle module
 ```
    Download the Perl DBD-Oracle-Version-tar.gz file from cpan.metacpan.org
@@ -33,7 +35,7 @@ Install Perl DBD::Oracle module
 ```
 To use DBI Oracle module you need to setup environments
 ```
-   ORACLE\_HOME, LD\_LBRARY\_PATH, TNS\_ADMIN
+   ORACLE_HOME, LD_LBRARY_PATH, TNS_ADMIN
 ```
 Test script
 ```use DBI;
@@ -51,7 +53,7 @@ yum install -y perl-DBI
 yum install -y perl-ExtUtils-MakeMaker perl-ExtUtils-ParseXS
 perl-Digest-SHA
 
-echo \"Build DBD::ORacle Module DBD-Oracle-1.76.tar.gz\"
+echo "Build DBD::ORacle Module DBD-Oracle-1.76.tar.gz"
 DBDFile=`ls -l DBD-Oracle* | awk '{print \$9}'`
 tar -xzvf $DBDFile -C /tmp
 cd /tmp/DBD-Oracle*
@@ -91,17 +93,16 @@ How to list out all the installed Perl Modules
 ```
    #!/bin/perl
    use File::Find;
-
    my @files;
    find(
-   {
-   wanted => sub {
-   push @files, $File::Find::fullname
-   if -f $File::Find::fullname && \\.pm$/
-   },
-   follow => 1,
-   follow_skip => 2,
-   },
+      {
+       wanted => sub {
+       push @files, $File::Find::fullname
+       if -f $File::Find::fullname && \\.pm$/
+          },
+       follow => 1,
+       follow_skip => 2,
+      },
    @INC
    );
 ```
