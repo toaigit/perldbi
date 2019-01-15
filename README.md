@@ -98,7 +98,7 @@ How to list out all the installed Perl Modules
       {
        wanted => sub {
        push @files, $File::Find::fullname
-       if -f $File::Find::fullname && \\.pm$/
+       if -f $File::Find::fullname && /\.pm$/
           },
        follow => 1,
        follow_skip => 2,
