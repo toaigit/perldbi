@@ -8,7 +8,7 @@ examle:
    oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm
    yum localinstall -y oracle*.rpm --nogpgcheck
 ```
-These InstantClient package will be installed in the following
+These InstantClient packages will be installed in the following
 directories:
 ```
    /usr/lib/oracle/12.2/client64/bin (sqlplus)
@@ -17,10 +17,10 @@ directories:
 ```
 You need to set Oracle Environment Variables
 ```
-   export PATH=/usr/lib/oracle/12.2/client64/bin:\$PATH
-   export LD\_LIBRARY\_PATH=/usr/lib/oracle/12.2/client64/lib
-   export ORACLE\_HOME=/usr/lib/oracle/12.2/client64
-   export TNS\_ADMIN=/path/to/your/tnsnames-file
+   export PATH=/usr/lib/oracle/12.2/client64/bin:$PATH
+   export LD_LIBRARY_PATH=/usr/lib/oracle/12.2/client64/lib
+   export ORACLE_HOME=/usr/lib/oracle/12.2/client64
+   export TNS_ADMIN=/path/to/your/tnsnames-file
 ```
 Install perl-DBI perl-ExtUtils-MakeMaker
 ```
@@ -43,7 +43,7 @@ Test script
 ```
 # oraperl.sh (single script to install DBD::Oracle Module)
 ```
-yum localinstall -y oracle\*.rpm \--nogpgcheck
+yum localinstall -y oracle*.rpm --nogpgcheck
 
 export PATH=/usr/lib/oracle/12.2/client64/bin:$PATH
 export LD_LIBRARY_PATH=/usr/lib/oracle/12.2/client64/lib
@@ -54,7 +54,7 @@ yum install -y perl-ExtUtils-MakeMaker perl-ExtUtils-ParseXS
 perl-Digest-SHA
 
 echo "Build DBD::ORacle Module DBD-Oracle-1.76.tar.gz"
-DBDFile=`ls -l DBD-Oracle* | awk '{print \$9}'`
+DBDFile=`ls -l DBD-Oracle* | awk '{print $9}'`
 tar -xzvf $DBDFile -C /tmp
 cd /tmp/DBD-Oracle*
 DBDir=$PWD
@@ -85,7 +85,7 @@ SSL yum install perl-IO-Socket-SSL
 
 **Other useful perl commands**
 
-How to find \@INC path
+How to find @INC path
 ```
 perl -V
 ```
@@ -112,7 +112,8 @@ How to check if a perl module installed
 ```
 ```
 Add your custom Perl Module path
+```
    Export PERL5LIB=
-   *A list of directories in which to look for Perl library files
-    before looking in the standard library.*
+   A list of directories in which to look for Perl library files
+    before looking in the standard library.
 ```
